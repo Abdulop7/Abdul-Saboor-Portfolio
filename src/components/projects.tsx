@@ -15,7 +15,7 @@ const projects = [
     description:
       "Built MANZIL, a SaaS resume builder that lets users generate professional resumes by simply entering their details. Developed with Next.js, Tailwind CSS, PostgreSQL, Prisma, and NextAuth for secure and seamless user experience.",
     tech: ["Next.js" , "Tailwind CSS" , "Prisma","PostgreSql" , "Next Auth" , "Git" , "Github"],
-    link: "",
+    link: "https://manzil-resume-builder.vercel.app",
   },
   {
     title: "ANU Architects Website",
