@@ -3,6 +3,14 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+type Project = {
+  title: string;
+  description: string;
+  details?: string[];
+  tech: string[];
+  link?: string;
+  image: string;
+};
 
 const projects = [
   {
@@ -86,7 +94,7 @@ const projects = [
 ];
 
 export default function Projects() {
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
     <section
