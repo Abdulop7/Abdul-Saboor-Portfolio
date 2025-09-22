@@ -18,6 +18,6 @@ body {
   right: -8%;  /* extend line beyond text */
   top: 50%;    /* center through text */
   height: 3px;
-  background-color: red;
+  background-color: #0EA5E9;
   transform: translateY(-20%);
 }

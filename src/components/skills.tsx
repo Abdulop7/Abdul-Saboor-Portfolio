@@ -25,11 +25,12 @@ export default function Skills() {
     return (
         <section
             id="skills"
-            className="relative w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-black via-black to-red-950 px-6 py-24 overflow-hidden"
+            className="relative w-full min-h-screen flex flex-col items-center justify-center 
+                       bg-gradient-to-b from-[#0F172A] via-[#0F172A] to-black px-6 py-24 overflow-hidden"
         >
             {/* Background aura */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="w-[600px] h-[600px] bg-red-600/10 rounded-full blur-[200px]" />
+                <div className="w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-[200px]" />
             </div>
 
             {/* Section Title */}
@@ -37,12 +38,10 @@ export default function Skills() {
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="text-4xl md:text-5xl font-bold mb-16 uppercase tracking-[0.3em] text-white"
+                className="text-4xl md:text-5xl font-bold mb-16 uppercase tracking-[0.3em] text-[#F8FAFC]"
             >
-                Tech <span className="text-red-500">Stack</span>
+                Tech <span className="text-[#0EA5E9]">Stack</span>
             </motion.h2>
-
-
 
             {/* Tech Grid */}
             <div className="relative z-10 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-12 max-w-5xl w-full">
@@ -56,15 +55,22 @@ export default function Skills() {
                         className="flex flex-col items-center text-center group cursor-pointer"
                     >
                         {/* Logo with refined glow */}
-                        <div className="w-30 h-30 relative mb-3">
+                        <div className="md:w-30 md:h-30 w-20 h-20 relative mb-3">
                             <Image
                                 src={tech.logo}
                                 alt={tech.name}
                                 fill
-                                className="object-contain drop-shadow-[0_0_6px_rgba(220,38,38,0.5)] group-hover:drop-shadow-[0_0_14px_rgba(220,38,38,0.8)] transition-all duration-300"
+                                className="object-contain 
+                                           drop-shadow-[0_0_8px_rgba(14,165,233,0.6)] 
+                                           group-hover:drop-shadow-[0_0_16px_rgba(34,197,94,0.9)] 
+                                           transition-all duration-300"
                             />
                         </div>
 
+                        {/* Tech Name */}
+                        <p className="text-sm text-[#E2E8F0] group-hover:bg-gradient-to-r from-[#0EA5E9] to-[#22C55E] bg-clip-text text-transparent transition-all duration-300">
+                            {tech.name}
+                        </p>
                     </motion.div>
                 ))}
             </div>

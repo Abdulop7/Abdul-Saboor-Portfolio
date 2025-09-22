@@ -19,7 +19,7 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 w-full z-50">
 <div className="max-w-7xl mx-auto px-6 py-16 flex items-center justify-end">
   {/* ==== Desktop Nav Links ==== */}
-  <ul className="hidden md:flex space-x-20 text-white text-2xl font-semibold tracking-wide">
+  <ul className="hidden md:flex space-x-20 text-[#E2E8F0] text-2xl font-semibold tracking-wide">
     {navItems.map((item) => (
       <li key={item.to}>
         <ScrollLink
@@ -30,7 +30,7 @@ export default function Navbar() {
           spy={true}
           isDynamic={true}
           activeClass="active-link"
-          className="relative cursor-pointer transition-colors hover:text-red-400"
+          className="relative cursor-pointer transition-colors hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#0EA5E9] hover:to-[#22C55E]"
         >
           {item.label}
         </ScrollLink>
@@ -40,7 +40,7 @@ export default function Navbar() {
 
         {/* ==== Mobile Menu Button ==== */}
         <button
-          className="md:hidden text-white ml-4"
+          className="md:hidden text-[#E2E8F0] ml-4 hover:text-[#22C55E] "
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -69,7 +69,7 @@ export default function Navbar() {
                   offset={-80}
                   spy={true}
                   activeClass="active-link"
-                  className="block py-3 cursor-pointer transition-colors hover:text-red-400"
+                  className="block py-3 cursor-pointer transition-colors hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#0EA5E9] hover:to-[#22C55E]"
                   onClick={() => setMenuOpen(false)}
                 >
                   {item.label}

@@ -7,15 +7,14 @@ export default function Hero() {
   return (
     <section
       id="intro"
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-red-950 via-black to-black px-6 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-[#0F172A] px-6 overflow-hidden"
     >
       {/* Background spotlight */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-[500px] h-[500px] md:w-[700px] md:h-[700px] bg-red-600/20 rounded-full blur-[150px]" />
+        <div className="w-[500px] h-[500px] md:w-[700px] md:h-[700px] bg-[#0EA5E9]/10 rounded-full blur-[150px]" />
       </div>
 
       <div className="relative max-w-7xl w-full flex flex-col md:flex-row items-center gap-12 z-10">
-        
         {/* ==== Left: Portrait PNG with Glow ==== */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}
@@ -25,10 +24,10 @@ export default function Hero() {
         >
           <div className="relative w-[320px] md:w-[800px] aspect-[3/4]">
             <Image
-              src="/profile.png" // <-- use your background-removed PNG here
+              src="/profile.png"
               alt="Abdul Saboor - Web Developer"
               fill
-              className="object-contain drop-shadow-[0_0_40px_rgba(220,38,38,0.7)]"
+              className="object-contain drop-shadow-[0_0_40px_rgba(14,165,233,0.7)]"
               priority
             />
           </div>
@@ -41,7 +40,7 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="flex-1 text-center md:text-left relative"
         >
-          <h2 className="text-lg text-red-400 tracking-widest uppercase mb-3">
+          <h2 className="text-lg text-[#E2E8F0] tracking-widest uppercase mb-3">
             Hello, I’m
           </h2>
 
@@ -51,35 +50,37 @@ export default function Hero() {
               Abdul Saboor
             </h1>
             {/* Behind effect */}
-            <span className="absolute -left-4 -top-4 text-[120px] md:text-[180px] font-extrabold text-red-900/20 select-none z-0">
+            <span className="absolute -left-4 -top-4 text-[120px] md:text-[180px] font-extrabold text-[#0EA5E9]/10 select-none z-0">
               SABOOR
             </span>
           </div>
 
-          <h3 className="text-xl md:text-2xl mt-6 text-gray-200">
-            A <span className="text-red-500 font-semibold">Web Developer</span>
+          <h3 className="text-xl md:text-2xl mt-6 text-[#F8FAFC]">
+            A{" "}
+            <span className="text-[#0EA5E9] font-semibold">Web Developer</span>
           </h3>
 
-          <p className="mt-6 text-gray-400 max-w-xl">
-            Crafting <span className="text-red-400">modern</span>, 
-            <span className="text-red-400"> scalable</span>, and 
-            <span className="text-red-400"> responsive</span> web apps with 
-            <span className="text-red-400"> Next.js</span> & the 
-            <span className="text-red-400"> MERN stack</span>.  
-            Focused on performance, clean code, and detail-oriented design.
+          <p className="mt-6 text-[#E2E8F0] max-w-xl">
+            Crafting{" "}
+            <span className="text-[#0EA5E9]">modern</span>,{" "}
+            <span className="text-[#0EA5E9]">scalable</span>, and{" "}
+            <span className="text-[#0EA5E9]">responsive</span> web apps with{" "}
+            <span className="text-[#0EA5E9]">Next.js</span> & the{" "}
+            <span className="text-[#0EA5E9]">MERN stack</span>. Focused on
+            performance, clean code, and detail-oriented design.
           </p>
 
           {/* CTA Buttons */}
           <div className="mt-8 flex justify-center md:justify-start gap-4">
             <a
               href="#projects"
-              className="px-6 py-3 bg-red-600 text-white rounded-lg shadow-lg hover:bg-red-700 transition-all"
+              className="px-6 py-3 bg-[#22C55E] text-white rounded-lg shadow-lg transition-all hover:bg-gradient-to-r hover:from-[#0EA5E9] hover:to-[#22C55E]"
             >
               View Projects
             </a>
             <a
               href="#contact"
-              className="px-6 py-3 bg-white text-red-600 font-semibold rounded-lg shadow-lg hover:bg-gray-100 transition-all"
+              className="px-6 py-3 bg-white text-[#0EA5E9] font-semibold rounded-lg shadow-lg transition-all hover:bg-gradient-to-r hover:from-[#0EA5E9] hover:to-[#22C55E] hover:text-white"
             >
               Contact Me
             </a>
