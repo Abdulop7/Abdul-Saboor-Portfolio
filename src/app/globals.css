@@ -1,26 +1,104 @@
 @import "tailwindcss";
 
+@theme {
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+  --color-primary: #CCFF00; /* Stark neon crimson */
+  --color-accent: #00FFCC; /* Neon cyan */
+  --color-muted: #111111;
+  
+  --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  color-scheme: dark;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  .brutal-border {
+    @apply border border-white/20;
+  }
+  .brutal-border-b {
+    @apply border-b border-white/20;
+  }
+  .brutal-border-r {
+    @apply border-r border-white/20;
+  }
+  .brutal-border-l {
+    @apply border-l border-white/20;
+  }
+  .brutal-border-t {
+    @apply border-t border-white/20;
+  }
+  .brutal-hover {
+    @apply hover:bg-[#CCFF00] hover:text-black hover:border-[#CCFF00] transition-none;
+  }
+  .brutal-hover-accent {
+    @apply hover:bg-[#00FFCC] hover:text-black hover:border-[#00FFCC] transition-none;
+  }
+  .text-outline {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+    color: transparent;
+  }
+  .text-outline:hover {
+    -webkit-text-stroke: 1px #CCFF00;
+    color: #CCFF00;
+  }
+  .heading {
+    font-family: var(--font-heading);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+  }
+  .font-body {
+    font-family: var(--font-sans);
+  }
+  
+  /* OVERRIDE ALL BORDER RADIUS */
+  * {
+    border-radius: 0 !important;
+  }
+  
+  /* Glitch effect based on custom attributes */
+  .glitch-hover:hover {
+     animation: glitch-skew 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+     color: #CCFF00;
+     text-shadow: 
+        3px 0px 0px rgba(0, 255, 204, 0.8),
+        -3px 0px 0px rgba(255, 51, 102, 0.8);
   }
 }
 
+@keyframes glitch-skew {
+  0% { transform: skew(0deg); }
+  20% { transform: skew(-20deg); }
+  40% { transform: skew(20deg); }
+  60% { transform: skew(-10deg); }
+  80% { transform: skew(10deg); }
+  100% { transform: skew(0deg); }
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-background);
+  cursor: crosshair;
+}
+
+body * {
+  cursor: crosshair;
+}
+
+a, button, [role="button"] {
+  cursor: cell;
+}
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+  display: none;
 }
