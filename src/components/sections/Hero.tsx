@@ -16,18 +16,14 @@ export function HeroAsymmetric() {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
   const blur = useTransform(scrollYProgress, [0, 1], ["blur(0px)", "blur(20px)"]);
 
-  // Peak Scroll Effects: Glitch + Grains
-  const glitchRedX = useTransform(scrollYProgress, [0, 1], [0, -80]); // Extreme left tear
-  const glitchCyanX = useTransform(scrollYProgress, [0, 1], [0, 80]); // Extreme right tear
-  const textShadow = useMotionTemplate`${glitchRedX}px 0px 0px rgba(255, 51, 102, 0.9), ${glitchCyanX}px 0px 0px rgba(0, 255, 204, 0.9)`;
-  
+
   const grainOpacity = useTransform(scrollYProgress, [0, 1], [0.15, 0.8]);
 
   return (
     <motion.section 
       ref={containerRef}
       style={{ scale, opacity, filter: blur }}
-      className="min-h-screen brutal-border-b grid grid-cols-1 md:grid-cols-4 relative transform-origin-top overflow-hidden bg-black"
+      className="min-h-screen brutal-border-b grid grid-cols-1 md:grid-cols-4 relative transform-origin-top overflow-hidden bg-transparent"
     >
       {/* Dynamic Scrolling SVG Grain Overlay */}
       <motion.div 
@@ -59,10 +55,9 @@ export function HeroAsymmetric() {
             transition={{ duration: 1, ease: "circOut" }}
             className="pointer-events-auto relative z-20"
          >
-            {/* The Scroll-Driven Chromatic Aberration Element */}
+            {/* Clean Typographic Element without glitch */}
             <motion.h1 
-               style={{ textShadow }}
-               className="text-[18vw] md:text-[12vw] font-bold heading uppercase leading-[0.8] mb-12 text-white mix-blend-difference glitch-hover transition-colors duration-300"
+               className="text-[18vw] md:text-[12vw] font-bold heading uppercase leading-[0.8] mb-12 text-white mix-blend-difference transition-colors duration-300"
             >
                ABDUL
                <br />

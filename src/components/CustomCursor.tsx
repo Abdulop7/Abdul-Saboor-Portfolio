@@ -31,7 +31,7 @@ export default function CustomCursor() {
   }, []);
 
   return (
-    <>
+    <div className="hidden md:block">
       <motion.div
         className="fixed top-0 left-0 w-4 h-4 bg-teal-400 rounded-full pointer-events-none mix-blend-screen z-[9999]"
         animate={{
@@ -51,6 +51,6 @@ export default function CustomCursor() {
         }}
         transition={{ type: "spring", stiffness: 200, damping: 20, mass: 0.5 }}
       />
-    </>
+    </div>
   );
 }

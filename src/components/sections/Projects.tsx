@@ -46,7 +46,7 @@ export function ProjectsMonolith() {
        <div className="sticky top-0 h-screen overflow-hidden flex flex-col">
           
           <div className="p-8 md:p-16 lg:px-24 lg:py-12 brutal-border-b bg-[#111] z-10 shrink-0">
-            <h2 className="text-[12vw] md:text-[6vw] font-bold heading text-[#00FFCC] uppercase leading-none mix-blend-screen glitch-hover">
+            <h2 className="text-[12vw] md:text-[6vw] font-bold heading text-[#00FFCC] uppercase leading-none mix-blend-screen">
               WORK_LOGS
             </h2>
           </div>
