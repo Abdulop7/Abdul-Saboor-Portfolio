@@ -10,9 +10,7 @@ import { motionOK } from "@/lib/gsap";
  * HeroField (background canvas) — this canvas reads it back once per frame
  * via a tiny readPixels and uploads it as a texture, so the reveal on the face
  * is the SAME liquid stroke as the one parting the background contours.
- * Plus the cursor-displacement ripple: UVs pushed away from the lerped cursor,
- * strength driven by cursor velocity, with a chromatic fringe — the image
- * liquefies while you move and relaxes when you stop.
+ * No distortion: the images never move — only the reveal mask does.
  *
  * Falls back to a soft-circle lens if HeroField isn't running, and to plain
  * next/image on mobile / reduced motion / no WebGL.
@@ -28,36 +26,22 @@ varying vec2 vUv;
 uniform sampler2D uTex, uTexAlt, uMask;
 uniform vec4 uRect;      /* this canvas's rect in field-uv: x,y,w,h */
 uniform float uUseMask, uHover, uAspect;
-uniform vec2 uMouse;     /* uv space, lerped */
-uniform float uStrength; /* 0..1, cursor-velocity driven ripple */
-
-/* sample with a small RGB split along dir — the ripple's chromatic fringe */
-vec4 sampleCA(sampler2D t, vec2 uv, vec2 dir, float ca) {
-  vec4 c = texture2D(t, uv);
-  c.r = texture2D(t, clamp(uv - dir * ca, 0.001, 0.999)).r;
-  c.b = texture2D(t, clamp(uv + dir * ca, 0.001, 0.999)).b;
-  return c;
-}
+uniform vec2 uMouse;     /* uv space, lerped (fallback lens only) */
 
 void main(){
-  /* --- displacement ripple: pushes away from the cursor, velocity-driven --- */
-  vec2 d = vUv - uMouse; d.x *= uAspect;
-  float dist = length(d);
-  float force = exp(-dist * 8.0) * 0.09 * uStrength;
-  vec2 dir = dist > 0.0001 ? normalize(vUv - uMouse) : vec2(0.0);
-  vec2 uv = clamp(vUv - dir * force, 0.001, 0.999);
-  float ca = force * 0.5;
+  /* images never move — only the reveal mask does */
+  vec4 base = texture2D(uTex, vUv);
+  vec4 alt  = texture2D(uTexAlt, vUv);
 
-  vec4 base = sampleCA(uTex, uv, dir, ca);
-  vec4 alt  = sampleCA(uTexAlt, uv, dir, ca);
-
-  /* --- reveal mask: shared fluid trail, else soft cursor lens --- */
   float m;
   if (uUseMask > 0.5) {
+    /* shared fluid trail from HeroField */
     vec2 fuv = uRect.xy + vUv * uRect.zw;
     m = smoothstep(0.06, 0.55, texture2D(uMask, fuv).r);
   } else {
-    m = (1.0 - smoothstep(0.14, 0.26, dist)) * uHover;
+    /* fallback: soft cursor lens */
+    vec2 d = vUv - uMouse; d.x *= uAspect;
+    m = (1.0 - smoothstep(0.14, 0.26, length(d))) * uHover;
   }
   gl_FragColor = mix(base, alt, m);
 }`;
@@ -107,7 +91,7 @@ export default function PortraitFX({
     gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
 
     const U = (n: string) => gl.getUniformLocation(prog, n);
-    const uRect = U("uRect"), uUseMask = U("uUseMask"), uHover = U("uHover"), uAspect = U("uAspect"), uMouse = U("uMouse"), uStrength = U("uStrength");
+    const uRect = U("uRect"), uUseMask = U("uUseMask"), uHover = U("uHover"), uAspect = U("uAspect"), uMouse = U("uMouse");
     gl.uniform1i(U("uTex"), 0);
     gl.uniform1i(U("uTexAlt"), 1);
     gl.uniform1i(U("uMask"), 2);
@@ -156,10 +140,10 @@ export default function PortraitFX({
     const ro = new ResizeObserver(resize);
     ro.observe(canvas);
 
-    // cursor state: lerped position + velocity-driven ripple strength
+    // cursor state: lerped position + eased hover
     // (hover is only used by the fallback lens when HeroField isn't running)
     const target = { x: 0.5, y: 0.5 }, mouse = { x: 0.5, y: 0.5 };
-    let strength = 0, hover = 0, inside = false;
+    let hover = 0, inside = false;
     const onMove = (e: MouseEvent) => {
       const r = canvas.getBoundingClientRect();
       if (!r.width) return;
@@ -211,7 +195,6 @@ export default function PortraitFX({
       gl.uniform1f(uHover, hover);
       gl.uniform1f(uAspect, canvas.width / Math.max(1, canvas.height));
       gl.uniform2f(uMouse, mouse.x, mouse.y);
-      gl.uniform1f(uStrength, strength);
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
     };
 
@@ -219,12 +202,9 @@ export default function PortraitFX({
     const tick = () => {
       raf = requestAnimationFrame(tick);
       if (!ready || !visible) return;
-      // lerped cursor; ripple strength rises with velocity, relaxes when still
-      const dx = target.x - mouse.x, dy = target.y - mouse.y;
-      mouse.x += dx * 0.1;
-      mouse.y += dy * 0.1;
-      const vel = Math.min(1, Math.hypot(dx, dy) * 14);
-      strength += (vel - strength) * (vel > strength ? 0.2 : 0.05);
+      // lerped cursor + eased hover (both only matter for the fallback lens)
+      mouse.x += (target.x - mouse.x) * 0.25;
+      mouse.y += (target.y - mouse.y) * 0.25;
       hover += ((inside ? 1 : 0) - hover) * (inside ? 0.22 : 0.12);
       resize();
       render();
