@@ -1,0 +1,99 @@
+{
+  "projects": [
+    {
+      "slug": "anu-architects",
+      "index": "01",
+      "title": "ANU Architects",
+      "year": "2024",
+      "role": "Full-stack Engineer",
+      "stack": [
+        "Next.js",
+        "Prisma",
+        "PostgreSQL",
+        "Redis",
+        "Gemini"
+      ],
+      "problem": "An architecture studio running 178 projects on WhatsApp threads, spreadsheets, and a brochure site that never changed.",
+      "result": "One codebase, two products — a statically generated portfolio site and a role-based ops dashboard: task tracking, attendance, payments, AI renders, and a WhatsApp review funnel that routes 4–5 stars to Google.",
+      "image": "/projects/anu.jpeg",
+      "live": "https://anuarchitects.com",
+      "repo": null
+    },
+    {
+      "slug": "ema-futures-bot",
+      "index": "02",
+      "title": "EMA Futures Bot",
+      "year": "2023",
+      "role": "Solo Engineer",
+      "stack": [
+        "Node.js",
+        "MongoDB",
+        "WebSockets",
+        "React",
+        "Fly.io"
+      ],
+      "problem": "Manual futures trading means missed 3-minute windows, emotional exits, and rules that quietly drift — discipline doesn't survive a losing streak.",
+      "result": "Autonomous 4-EMA trend engine on Binance Futures: bracket exits with break-even locks, crash-safe state recovery, a fleet dashboard across 5 bots — and a self-optimizer that re-derives its own filters and TP/SL from 30 days of real trade excursions.",
+      "image": "/projects/ema-bot.png",
+      "live": null,
+      "repo": null
+    },
+        {
+      "slug": "bytetuned-careers",
+      "index": "03",
+      "title": "ByteTuned Careers",
+      "year": "2025",
+      "role": "Lead Engineer",
+      "stack": [
+        "NestJS",
+        "Next.js",
+        "Prisma",
+        "BullMQ",
+        "Gmail API"
+      ],
+      "problem": "A legacy Laravel careers site where recruiters tracked candidates in inboxes and spreadsheets — every interview invite, reply, and booking was a manual step.",
+      "result": "Rebuilt as a TypeScript monorepo — public job board plus a full ATS: gated onboarding with Redis autosave, a recruiter console with notes and timelines, Gmail invites polled by a cron → BullMQ worker, Calendly webhooks, and an AI layer for summaries and match scores.",
+      "image": "/projects/careers.png",
+      "live": null,
+      "repo": null
+    },
+    {
+      "slug": "astra-ai",
+      "index": "04",
+      "title": "Astra AI",
+      "year": "2024",
+      "role": "Full-stack Engineer",
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "AWS Cognito",
+        "Lambda",
+        "GPT-4o"
+      ],
+      "problem": "Most chat-assistant demos stop at a textbox — no accounts, no history, and an API key sitting in the browser bundle.",
+      "result": "A ChatGPT-style assistant with real auth: Cognito sign-up → verify → sign-in, per-user chat history on API Gateway + Lambda, deep-linkable conversations, and a server-side proxy so the model key never reaches the client.",
+      "image": "/projects/astra.png",
+      "live": null,
+      "repo": null
+    },
+    {
+      "slug": "manzil",
+      "index": "05",
+      "title": "Manzil",
+      "year": "2024",
+      "role": "Full-stack Engineer",
+      "stack": [
+        "Next.js",
+        "NextAuth",
+        "Prisma",
+        "PostgreSQL",
+        "Tailwind"
+      ],
+      "problem": "Resume builders are built for Western job markets and Western wallets — no local payment rails, and templates that look wrong to a Pakistani recruiter.",
+      "result": "ATS-friendly resume builder for the Pakistani market: Google/email auth, four templates with premium gating, a guided multi-section form, live preview, one-click PDF — and a premium tier paid through Easypaisa and JazzCash.",
+      "image": "/projects/manzil.png",
+      "live": null,
+      "repo": null
+    }
+  ]
+}

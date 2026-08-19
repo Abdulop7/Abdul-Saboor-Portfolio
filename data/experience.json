@@ -1,0 +1,34 @@
+{
+  "entries": [
+    {
+      "company": "ByteTuned",
+      "role": "Founder & Lead Engineer",
+      "dates": "2026 — Now",
+      "bullets": [
+        "Rebuilt the careers platform from legacy Laravel into a NestJS + Next.js TypeScript monorepo — job board plus a full ATS",
+        "Automated the interview loop end to end: Gmail invites, a cron → BullMQ worker polling replies, and Calendly booking webhooks",
+        "Designed the recruiter console — applicant queue, evaluation notes, activity timeline, and a cached AI layer for summaries and match scores"
+      ]
+    },
+    {
+      "company": "ANU Architects",
+      "role": "Full-stack Engineer",
+      "dates": "2024 — 2026",
+      "bullets": [
+        "Shipped two products in one Next.js codebase — a statically generated portfolio of 178 projects and a role-based studio ops dashboard",
+        "Built task, attendance, and payment tracking for four roles, with a weighted progress model and a Redis-cached dashboard payload",
+        "Launched a WhatsApp review funnel that routes 4–5 stars to Google and low ratings to private feedback, plus Gemini-powered render generation"
+      ]
+    },
+    {
+      "company": "Freelance",
+      "role": "Engineer & Consultant",
+      "dates": "2022 — 2023",
+      "bullets": [
+        "12 client projects shipped — e-commerce, publishing, early ML tools",
+        "First production app served 100k monthly readers on a $20 VPS",
+        "Learned the lesson that still pays rent: boring tech, exciting product"
+      ]
+    }
+  ]
+}

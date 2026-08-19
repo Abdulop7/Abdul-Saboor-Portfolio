@@ -1,0 +1,125 @@
+{
+  "name": "Abdul Saboor",
+  "firstName": "ABDUL",
+  "logotype": "abdul®",
+  "role": "Full-stack engineer",
+  "tagline": "Full-stack engineer building AI systems and the infrastructure underneath them.",
+  "email": "abdulsaboora691@gmail.com",
+  "location": "Multan, PK",
+  "timezone": "Asia/Karachi",
+  "available": true,
+  "availabilityLabel": "Open to select projects",
+  "accent": "#C6F24E",
+  "hero": {
+    "lineBack": "ALWAYS SHIPPING",
+    "lineFront": "what's next.",
+    "kicker": "Software engineer — systems, interfaces, and the glue between them.",
+    "bgReveal": "/hero-reveal.jpg"
+  },
+  "manifesto": "I build software the way good editors cut film — remove everything that doesn't serve the story. Four years shipping systems that stay up, interfaces that stay out of the way, and abstractions that earn their keep.",
+  "currentlyBuilding": {
+    "label": "CURRENTLY BUILDING",
+    "repo": "bytetuned/relay-v2",
+    "stack": [
+      "Next.js",
+      "Rust",
+      "Postgres"
+    ],
+    "status": "live"
+  },
+  "nav": [
+    {
+      "label": "Work",
+      "href": "#work"
+    },
+    {
+      "label": "Stack",
+      "href": "#stack"
+    },
+    {
+      "label": "Experience",
+      "href": "#experience"
+    },
+    {
+      "label": "Process",
+      "href": "#process"
+    },
+    {
+      "label": "Contact",
+      "href": "#contact"
+    }
+  ],
+  "socials": [
+    {
+      "label": "GitHub",
+      "href": "https://github.com/Abdulop7",
+      "handle": "@Abdulop7"
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/abdul-saboor-1333b8167",
+      "handle": "in/abdul-saboor-1333b8167"
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Repos shipped",
+      "value": 30,
+      "suffix": "+"
+    },
+    {
+      "label": "Years writing software",
+      "value": 4,
+      "suffix": ""
+    },
+    {
+      "label": "Users served",
+      "value": 98,
+      "suffix": "k",
+      "decimals": 0
+    },
+    {
+      "label": "Uptime maintained",
+      "value": 99.98,
+      "suffix": "%",
+      "decimals": 2
+    }
+  ],
+  "process": [
+    {
+      "step": "01",
+      "title": "Interrogate",
+      "body": "Every build starts with the question behind the ticket. I read the codebase, the metrics, and the support threads before I write a line — most expensive bugs are requirements bugs."
+    },
+    {
+      "step": "02",
+      "title": "Prototype",
+      "body": "A working ugly thing beats a beautiful document. I ship a thin vertical slice in days, put it in front of real users, and let the surprises arrive while they're still cheap."
+    },
+    {
+      "step": "03",
+      "title": "Harden",
+      "body": "Then the unglamorous work: load tests, failure injection, observability, the p99 nobody sees until it pages you. Boring in production is the whole point."
+    },
+    {
+      "step": "04",
+      "title": "Hand off",
+      "body": "Software isn't done until the next engineer can own it. Docs that answer why, dashboards that answer what now, and an architecture a new hire can hold in their head."
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Abdul is the engineer you hand the vague, high-stakes problem to. He came back with a system that's been boring — in the best way — for two years.",
+      "author": "Sara Haddad",
+      "roleLine": "VP Engineering, Meridian"
+    },
+    {
+      "quote": "Rare mix: cares about the p99 and the pixel. Our conversion went up because the product finally felt fast everywhere.",
+      "author": "Tom Okafor",
+      "roleLine": "Founder, Fieldnote"
+    }
+  ],
+  "footer": {
+    "builtWith": "Next.js · GSAP · Lenis · Tailwind"
+  }
+}

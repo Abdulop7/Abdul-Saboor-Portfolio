@@ -1,0 +1,210 @@
+{
+  "marquee": [
+    "typescript",
+    "react",
+    "nextdotjs",
+    "nodedotjs",
+    "rust",
+    "python",
+    "postgresql",
+    "redis",
+    "docker",
+    "kubernetes",
+    "tailwindcss",
+    "graphql"
+  ],
+  "categories": [
+    {
+      "id": "languages",
+      "label": "Languages",
+      "items": [
+        {
+          "name": "TypeScript",
+          "icon": "typescript",
+          "years": 3,
+          "use": "Default for everything that ships to a browser or an edge runtime."
+        },
+        {
+          "name": "Python",
+          "icon": "python",
+          "years": 4,
+          "use": "Data pipelines, ML glue, and anything that talks to a GPU."
+        },
+        {
+          "name": "Rust",
+          "icon": "rust",
+          "years": 1,
+          "use": "Hot paths — parsers, proxies, and services where p99 is the contract."
+        },
+        {
+          "name": "Go",
+          "icon": "go",
+          "years": 2,
+          "use": "CLIs and small network services that need to be boring forever."
+        }
+      ]
+    },
+    {
+      "id": "frontend",
+      "label": "Frontend",
+      "items": [
+        {
+          "name": "React",
+          "icon": "react",
+          "years": 3,
+          "use": "The rendering layer for every product UI I've shipped since 2022."
+        },
+        {
+          "name": "Next.js",
+          "icon": "nextdotjs",
+          "years": 3,
+          "use": "App Router, RSC, edge rendering — the chassis for client work."
+        },
+        {
+          "name": "Tailwind CSS",
+          "icon": "tailwindcss",
+          "years": 2,
+          "use": "Design systems that survive contact with a growing team."
+        },
+        {
+          "name": "GSAP",
+          "icon": "greensock",
+          "years": 2,
+          "use": "Scroll choreography and any motion that has to hit 60fps."
+        },
+        {
+          "name": "Three.js",
+          "icon": "threedotjs",
+          "years": 1,
+          "use": "WebGL scenes and shader work for hero moments."
+        }
+      ]
+    },
+    {
+      "id": "backend",
+      "label": "Backend",
+      "items": [
+        {
+          "name": "Node.js",
+          "icon": "nodedotjs",
+          "years": 3,
+          "use": "API layers and realtime services, mostly Fastify + WebSockets."
+        },
+        {
+          "name": "FastAPI",
+          "icon": "fastapi",
+          "years": 2,
+          "use": "ML-adjacent services where Python is already in the room."
+        },
+        {
+          "name": "GraphQL",
+          "icon": "graphql",
+          "years": 2,
+          "use": "Federated graphs for product teams that iterate faster than their gateway."
+        },
+        {
+          "name": "gRPC",
+          "icon": "trpc",
+          "years": 1,
+          "use": "Typed contracts between internal services — schema first, always."
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "label": "Data",
+      "items": [
+        {
+          "name": "PostgreSQL",
+          "icon": "postgresql",
+          "years": 4,
+          "use": "The default answer. Row-level security, logical replication, no drama."
+        },
+        {
+          "name": "Redis",
+          "icon": "redis",
+          "years": 3,
+          "use": "Caching, queues, rate limits — the swiss army knife it always was."
+        },
+        {
+          "name": "Kafka",
+          "icon": "apachekafka",
+          "years": 2,
+          "use": "Event backbones for analytics pipelines at ~1M events/min."
+        },
+        {
+          "name": "ClickHouse",
+          "icon": "clickhouse",
+          "years": 1,
+          "use": "Sub-second analytics over billions of rows without a data team."
+        }
+      ]
+    },
+    {
+      "id": "infra",
+      "label": "Infra",
+      "items": [
+        {
+          "name": "Docker",
+          "icon": "docker",
+          "years": 3,
+          "use": "Reproducible builds and dev environments that match prod."
+        },
+        {
+          "name": "Kubernetes",
+          "icon": "kubernetes",
+          "years": 2,
+          "use": "When the team is big enough to deserve it — not before."
+        },
+        {
+          "name": "Terraform",
+          "icon": "terraform",
+          "years": 2,
+          "use": "Infrastructure that's reviewed in PRs, not remembered in heads."
+        },
+        {
+          "name": "Vercel",
+          "icon": "vercel",
+          "years": 2,
+          "use": "Frontend deploys measured in seconds, previews on every push."
+        },
+        {
+          "name": "Cloudflare",
+          "icon": "cloudflare",
+          "years": 2,
+          "use": "Workers, R2, and the edge cases the edge actually solves."
+        }
+      ]
+    },
+    {
+      "id": "tooling",
+      "label": "Tooling",
+      "items": [
+        {
+          "name": "Git",
+          "icon": "git",
+          "years": 4,
+          "use": "Small commits, honest messages, rebase before review."
+        },
+        {
+          "name": "GitHub Actions",
+          "icon": "githubactions",
+          "years": 2,
+          "use": "CI that runs in minutes and deploys without a human in the loop."
+        },
+        {
+          "name": "Figma",
+          "icon": "figma",
+          "years": 2,
+          "use": "Where I meet designers halfway — and steal their spacing scales."
+        },
+        {
+          "name": "Vitest",
+          "icon": "vitest",
+          "years": 1,
+          "use": "Fast feedback loops; tests that document intent, not implementation."
+        }
+      ]
+    }
+  ]
+}
